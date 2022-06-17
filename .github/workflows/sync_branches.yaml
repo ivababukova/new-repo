@@ -2,18 +2,25 @@ name: Sync multiple branches with main
 on:
   push:
     branches:
-      - main
+      - branch1
 jobs:
   sync-branch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - name: Read a token that is specific for an environment
+        run: |-
+          echo Checking if we can access this secret
+          echo "${{ secrets.MY_SECRET }}"
 
-      - name: Merge main -> branch1
-        uses: devmasx/merge-branch@master
-        with:
-          type: now
-          from_branch: main
-          target_branch: branch1
-          github_token: ${{ github.token }}
+
+      # - uses: actions/checkout@master
+
+      # - name: Merge main -> branch1
+      #   uses: devmasx/merge-branch@master
+      #   with:
+      #     type: now
+      #     from_branch: main
+      #     target_branch: branch1
+      #     github_token: ${{ github.token }}    
+
 

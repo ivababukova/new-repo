@@ -10,7 +10,8 @@ jobs:
       - name: Read a token that is specific for an environment
         run: |-
           echo Checking if we can access this secret
-          echo "${{ secrets.MY_SECRET }}"
+          echo ${{ secrets.MY_SECRET }}
+          
 
 
       # - uses: actions/checkout@master

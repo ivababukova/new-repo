@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Read a token that is specific for an environment
         env:
-          MY_SECRET: ${{ secrets.MY_SECRET }}
+          MY_SECRET: ${{ env.MY_SECRET }}
         run: |-
           echo Checking if we can access this secret
           echo $MY_SECRET

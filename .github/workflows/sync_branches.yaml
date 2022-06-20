@@ -23,5 +23,13 @@ jobs:
             echo Secret MY_SECRET is not set in secrets for this environment.
             ERROR=true
           fi
+
+          if [ ! -z "$ERROR" ]
+          then
+            echo
+            echo This workflow requires some secrets to complete. The secrets can be set/rotated
+            echo by running `rotate-ci` from `biomage-utils`.
+            false
+          fi
           
 

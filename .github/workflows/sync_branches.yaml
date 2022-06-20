@@ -1,4 +1,4 @@
-name: Sync multiple branches with main
+name: Deploy to multiple environments after pushing to main
 on:
   push:
     branches:

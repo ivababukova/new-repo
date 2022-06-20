@@ -6,7 +6,12 @@ on:
 jobs:
   sync-branch:
     runs-on: ubuntu-latest
-    environment: "Branch 1"
+    strategy:
+      matrix:
+        include:
+          - environment: Branch 1
+          - environment: Environment 2
+    environment: ${{ matrix.environment }}
     steps:
       - name: Read a token that is specific for an environment
         env:

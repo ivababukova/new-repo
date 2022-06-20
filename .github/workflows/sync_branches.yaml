@@ -3,10 +3,14 @@ on:
   push:
     branches:
       - branch1
+
+matrix: ${{ steps.set-matrix.outputs.matrix }}
+
 jobs:
   sync-branch:
     runs-on: ubuntu-latest
-    environment: Branch 1
+    environment:
+      matrix: ["Branch 1", "Environment 2"]
     steps:
       - name: Read a token that is specific for an environment
         env:

@@ -6,8 +6,7 @@ on:
 jobs:
   sync-branch:
     runs-on: ubuntu-latest
-    environment:
-      name: "Branch 1"
+    environment: "Branch 1"
     steps:
       - name: Read a token that is specific for an environment
         env:

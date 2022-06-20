@@ -2,7 +2,7 @@ name: Sync multiple branches with main
 on:
   push:
     branches:
-      - branch1
+      - main
 jobs:
   sync-branch:
     runs-on: ubuntu-latest

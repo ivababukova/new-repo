@@ -18,6 +18,10 @@ jobs:
           MY_SECRET: ${{ secrets.MY_SECRET }}
         run: |-
           echo Checking if we can access this secret
-          echo $MY_SECRET
+          if [ -z "${{ secrets.MY_SECRET }}" ]
+          then
+            echo Secret MY_SECRET is not set in secrets for this environment.
+            ERROR=true
+          fi
           
 

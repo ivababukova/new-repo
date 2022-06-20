@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - branch1
-
-matrix: ${{ steps.set-matrix.outputs.matrix }}
-
 jobs:
   sync-branch:
     runs-on: ubuntu-latest

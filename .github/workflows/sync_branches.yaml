@@ -7,7 +7,7 @@ jobs:
   sync-branch:
     runs-on: ubuntu-latest
     environment:
-      matrix: ["Branch 1", "Environment 2"]
+      name: "Branch 1"
     steps:
       - name: Read a token that is specific for an environment
         env:
